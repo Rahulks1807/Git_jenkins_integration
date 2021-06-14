@@ -3,3 +3,4 @@ testing1234
 new testing123456
 New Testing0987654
 Again New Testing line.
+New lin for testing Poll Setting in pipeline.
