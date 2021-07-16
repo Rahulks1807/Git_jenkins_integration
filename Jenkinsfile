@@ -4,8 +4,8 @@ pipeline {
         stage("Initialization") {
             steps {
                 // use name of the patchset as the build name
-              buildName "1_${BUILD_NUMBER}"
-                buildDescription "Executed @ ${NODE_NAME}"
+              buildName "${BUILD_NUMBER}"
+                buildDescription " ${Release_Number} is Executed @ ${NODE_NAME}"
             }
         }
     }
