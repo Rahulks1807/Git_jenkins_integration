@@ -5,15 +5,22 @@ pipeline {
             steps {
                 // use name of the patchset as the build name
               buildName "${BUILD_NUMBER}"
-                buildDescription " ${Release_Number} is Executed @ ${NODE_NAME}"
+                buildDescription " Release Number ${Release_Number} was Executed on node ${NODE_NAME}"
+            }
+        }
+        stage("Hello Stage") {
+            steps {
+                // use name of the patchset as the build name
+              echo " This will pass test for Plugin"
             }
         }
     }
     post {
+        success {
+            buildDescription "Build passed with on Release Number ${Release_Number}"
+        }
         failure {
-            // in case of failure, we'd like to have simple 'git blame' on build history :)
-           //currentBuild.displayName = 'This build needs help!!!'
-            buildDescription("Committer: ${GERRIT_PATCHSET_UPLOADER_NAME}")
+            buildDescription "Build failed with on Release Number ${Release_Number}"
         }
     }
 }
