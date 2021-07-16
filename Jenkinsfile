@@ -11,8 +11,7 @@ pipeline {
         stage("Hello Stage") {
             steps {
                 // use name of the patchset as the build name
-              echo " This will pass test for Plugin";
-                exit 0
+              echo " This will pass test for Plugin"
             }
         }
     }
