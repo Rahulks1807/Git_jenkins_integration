@@ -4,7 +4,7 @@ pipeline {
         stage("Initialization") {
             steps {
                 // use name of the patchset as the build name
-              buildName "${GERRIT_CHANGE_SUBJECT}_${BUILD_NUMBER}"
+              buildName "1_${BUILD_NUMBER}"
                 buildDescription "Executed @ ${NODE_NAME}"
             }
         }
